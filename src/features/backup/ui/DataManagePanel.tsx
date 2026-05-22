@@ -35,7 +35,7 @@ import {
   type ExportData,
   type ImportMode,
   type ImportPreview,
-} from "@/features/manual-nav/lib/exportImport";
+} from "@/features/backup/lib/exportImport";
 import type { ManualNavState } from "@/shared/types/manual-nav";
 
 export function DataManagePanel({
@@ -138,7 +138,7 @@ export function DataManagePanel({
               <div className="space-y-2">
                 <Label>导出数据</Label>
                 <p className="text-xs text-muted-foreground">
-                  将所有分类、链接及外观设置导出为 JSON 文件，可用于备份或迁移
+                  将导航数据及相关设置导出为 JSON 文件，可用于备份或迁移
                 </p>
                 <div className="flex items-center justify-between">
                   <Label htmlFor="include-bg" className="text-xs text-muted-foreground cursor-pointer">

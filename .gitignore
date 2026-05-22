@@ -59,6 +59,7 @@ $RECYCLE.BIN/
 
 # Local AI / tool workspaces
 CLAUDE.md
+AGENTS.md
 AGENTS.local.md
 .codex/
 .cursor/
@@ -66,8 +67,9 @@ AGENTS.local.md
 .lovable/
 .playwright-mcp/
 
-# Internal docs kept locally only
-docs/
+# Local-only doc drafts
+docs/local/
+docs/private/
 
 # Local exports, screenshots, and temporary files
 backups/

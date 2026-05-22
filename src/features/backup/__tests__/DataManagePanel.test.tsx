@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { describe, expect, it, vi, beforeEach } from "vitest";
 
-import { DataManagePanel } from "@/features/manual-nav/ui/DataManagePanel";
+import { DataManagePanel } from "@/features/backup/ui/DataManagePanel";
 import { Accordion } from "@/shared/ui/primitives/accordion";
 import type { ManualNavState } from "@/shared/types/manual-nav";
 
@@ -16,7 +16,7 @@ vi.mock("@/shared/ui/primitives/use-toast", () => ({
   toast: (...args: Parameters<typeof toastMock>) => toastMock(...args),
 }));
 
-vi.mock("@/features/manual-nav/lib/exportImport", () => ({
+vi.mock("@/features/backup/lib/exportImport", () => ({
   exportData: (...args: Parameters<typeof exportDataMock>) => exportDataMock(...args),
   downloadExportData: (...args: Parameters<typeof downloadExportDataMock>) => downloadExportDataMock(...args),
   parseImportFile: (...args: Parameters<typeof parseImportFileMock>) => parseImportFileMock(...args),

@@ -64,7 +64,7 @@ vi.mock("@/features/manual-nav/ui/CategoryManagePanel", () => ({
   ),
 }));
 
-vi.mock("@/features/manual-nav/ui/DataManagePanel", () => ({
+vi.mock("@/features/backup/ui/DataManagePanel", () => ({
   DataManagePanel: () => null,
 }));
 

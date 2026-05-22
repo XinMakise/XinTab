@@ -32,7 +32,7 @@ vi.mock("@/features/manual-nav/ui/CategoryManagePanel", () => ({
   CategoryManagePanel: () => null,
 }));
 
-vi.mock("@/features/manual-nav/ui/DataManagePanel", () => ({
+vi.mock("@/features/backup/ui/DataManagePanel", () => ({
   DataManagePanel: () => null,
 }));
 

@@ -41,7 +41,7 @@ vi.mock("@/features/appearance", () => ({
   setCurrentAppearance: (...args: Parameters<typeof setCurrentAppearanceMock>) => setCurrentAppearanceMock(...args),
 }));
 
-import { executeImport } from "@/features/manual-nav/lib/exportImport";
+import { executeImport } from "@/features/backup/lib/exportImport";
 
 describe("executeImport", () => {
   beforeEach(() => {
