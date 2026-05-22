@@ -1,0 +1,91 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs and generated assets
+dist/
+dist-ssr/
+build/
+out/
+coverage/
+
+# Test reports and tool caches
+playwright-report/
+test-results/
+.vite/
+.turbo/
+.cache/
+.nyc_output/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+vite-debug.log*
+vite-error.log*
+
+# Local config and secrets
+*.local
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Editor and OS files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+desktop.ini
+$RECYCLE.BIN/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local AI / tool workspaces
+CLAUDE.md
+AGENTS.local.md
+.codex/
+.cursor/
+.claude/
+.lovable/
+.playwright-mcp/
+
+# Internal docs kept locally only
+docs/
+
+# Local exports, screenshots, and temporary files
+backups/
+exports/
+*.backup.json
+xintab-backup-*.json
+image.png
+screenshot*.png
+*.screenshot.png
+recording*.webm
+*.har
+tmp/
+temp/
+.tmp/
+tmp_*.*
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.rej

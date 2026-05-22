@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 209 40% 96%;
+    --foreground: 222 47% 11%;
+
+    --card: 210 40% 98%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 214 31% 91%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 216 19% 26%;
+    --primary-foreground: 210 19% 98%;
+
+    --secondary: 215 19% 34%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 20% 65%;
+    --muted-foreground: 222 47% 11%;
+
+    --accent: 210 40% 98%;
+    --accent-foreground: 215 16% 46%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 85% 97%;
+
+    --border: 212 26% 83%;
+    --input: 212 26% 83%;
+    --ring: 216 19% 26%;
+
+    --radius: 0rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 222 47% 11%;
+
+    --sidebar-primary: 216 19% 26%;
+
+    --sidebar-primary-foreground: 210 19% 98%;
+
+    --sidebar-accent: 215 19% 34%;
+
+    --sidebar-accent-foreground: 210 40% 98%;
+
+    --sidebar-border: 212 26% 83%;
+
+    --sidebar-ring: 216 19% 26%;
+
+    --chart-1: 217 10% 64%;
+
+    --chart-2: 215 20% 65%;
+
+    --chart-3: 215 16% 46%;
+
+    --chart-4: 219 8% 46%;
+
+    --chart-5: 215 19% 34%;
+
+    --sidebar: 210 40% 98%;
+
+    --font-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+
+    --font-serif: 'Crimson Pro', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+
+    --font-mono: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+
+    --tracking-normal: 0em;
+
+    --spacing: 0.25rem;
+
+    /* App-level appearance overrides (runtime) */
+    --app-card-opacity: 1;
+    --app-category-button-opacity: 1;
+    --app-card-material-filter: none;
+    --app-card-material-overlay: none;
+    --app-left-category-width: 192px;
+    --app-topnav-opacity: 0.8;
+    --app-topnav-material-filter: blur(12px) saturate(120%);
+    --app-topnav-material-overlay: none;
+    --app-searchbar-opacity: 0.8;
+    --app-searchbar-material-filter: blur(12px) saturate(120%);
+    --app-searchbar-material-overlay: none;
+    --app-font-scale: 1;
+    --app-font-family: var(--font-sans);
+    --app-bg-image: none;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 32% 17%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 24% 26%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 212 26% 83%;
+    --primary-foreground: 228 84% 4%;
+
+    --secondary: 215 19% 34%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 16% 46%;
+    --muted-foreground: 210 40% 98%;
+
+    --accent: 228 84% 4%;
+    --accent-foreground: 215 20% 65%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 85% 97%;
+
+    --border: 215 19% 34%;
+    --input: 215 19% 34%;
+    --ring: 212 26% 83%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 212 26% 83%;
+    --sidebar-primary-foreground: 228 84% 4%;
+    --sidebar-accent: 215 20% 65%;
+    --sidebar-accent-foreground: 228 84% 4%;
+    --sidebar-border: 215 19% 34%;
+    --sidebar-ring: 212 26% 83%;
+    --chart-1: 215 12% 83%;
+    --chart-2: 212 26% 83%;
+    --chart-3: 215 20% 65%;
+    --chart-4: 217 10% 64%;
+    --chart-5: 215 16% 46%;
+    --sidebar: 217 32% 17%;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--app-font-family);
+    background-image: var(--app-bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  html {
+    font-size: calc(16px * var(--app-font-scale));
+    /* 防止滚动条出现/消失时的布局抖动 */
+    scrollbar-gutter: stable;
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background) / 0.3);
+    border-radius: var(--radius);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: var(--radius);
+    transition: background 0.2s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground) / 0.3) hsl(var(--background) / 0.3);
+  }
+}
+
+@layer utilities {
+  /* Ensure our opacity override wins over Tailwind's default .bg-card utility */
+  .bg-card {
+    background-color: hsl(var(--card) / var(--app-card-opacity));
+    background-image: var(--app-card-material-overlay);
+    backdrop-filter: var(--app-card-material-filter);
+    -webkit-backdrop-filter: var(--app-card-material-filter);
+  }
+
+  .bg-popover {
+    background-color: hsl(var(--popover) / 1);
+  }
+
+  .bg-topnav {
+    background-color: hsl(var(--background) / var(--app-topnav-opacity));
+    background-image: var(--app-topnav-material-overlay);
+    backdrop-filter: var(--app-topnav-material-filter);
+    -webkit-backdrop-filter: var(--app-topnav-material-filter);
+  }
+
+  .bg-searchbar {
+    background-color: hsl(var(--card) / var(--app-searchbar-opacity));
+    background-image: var(--app-searchbar-material-overlay);
+    backdrop-filter: var(--app-searchbar-material-filter);
+    -webkit-backdrop-filter: var(--app-searchbar-material-filter);
+  }
+
+  /* Transparent scrollbar styling */
+  .scrollbar-transparent {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted) / 0.3) transparent;
+  }
+
+  .scrollbar-transparent::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-transparent::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-transparent::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted) / 0.3);
+    border-radius: 3px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  .scrollbar-transparent::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted) / 0.5);
+  }
+}

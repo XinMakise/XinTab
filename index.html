@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XinTab</title>
+    <meta name="description" content="一个自然简洁的新标签页" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16.png" />
+
+    <meta property="og:title" content="XinTab" />
+    <meta property="og:description" content="一个自然简洁的新标签页" />
+    <meta property="og:type" content="website" />
+
+    <!-- 防止加载闪烁：初始隐藏内容，等待外观初始化完成 -->
+    <style>
+      /* 初始状态：内容不可见 */
+      #root {
+        opacity: 0;
+      }
+      /* 外观加载完成后添加 .app-ready 类 */
+      #root.app-ready {
+        opacity: 1;
+        transition: opacity 0.15s ease-out;
+      }
+      /* 设置中性背景色，避免白色闪烁 */
+      html, body {
+        background-color: hsl(209 40% 96%);
+      }
+      html.dark, html.dark body {
+        background-color: hsl(222 47% 11%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
