@@ -9,17 +9,9 @@ Format: `[version] - YYYY-MM-DD` / type: `Added` `Changed` `Fixed` `Removed`
 ## [0.3.0] - 2026-04-22
 
 ### Added
-- 三档文档体系（开发/测试/验收）统一建立
 - Quick Edit 双栏拖拽对话框
 - 书签拖拽排序与跨分类移动
 - 最近访问拖入导航分类
-- 共享 DnD 会话骨架（`useStandardPageDndSession` / `useDndLifecycleState`）
-- 共享标准页布局层（`useStandardPageLayoutState` / `useStandardPageLinksContentModel`）
-- CI 质量门禁（GitHub Actions）
-
-### Changed
-- 页面装配收敛为三级链路：`pages -> features/page -> features/model`
-- DnD 落点解析收口到 `dndDropResolvers.ts` 纯函数层
 
 ### Fixed
 - Quick Edit 搜索态下跨分类移动行为漂移问题

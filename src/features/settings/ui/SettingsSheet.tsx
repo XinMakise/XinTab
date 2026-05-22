@@ -13,7 +13,8 @@ import {
 } from "@/shared/ui/primitives/sheet";
 import { AppearancePanel } from "@/features/appearance";
 import { BookmarksManagePanel } from "@/features/bookmarks";
-import { CategoryManagePanel, DataManagePanel } from "@/features/manual-nav";
+import { DataManagePanel } from "@/features/backup";
+import { CategoryManagePanel } from "@/features/manual-nav";
 import { QuickEditDialog } from "@/features/quick-edit";
 
 import type { SettingsSheetModel } from "../model/types";

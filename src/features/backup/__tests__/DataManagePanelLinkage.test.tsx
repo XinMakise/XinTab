@@ -2,7 +2,7 @@ import { fireEvent, render, screen, waitFor, within } from "@testing-library/rea
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { useState } from "react";
 
-import { DataManagePanel } from "@/features/manual-nav/ui/DataManagePanel";
+import { DataManagePanel } from "@/features/backup/ui/DataManagePanel";
 import { Accordion } from "@/shared/ui/primitives/accordion";
 import { useManualNavState } from "@/features/manual-nav";
 import { storage } from "@/shared/browser/storage";
