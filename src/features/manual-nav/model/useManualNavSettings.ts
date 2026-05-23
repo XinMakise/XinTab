@@ -7,7 +7,10 @@ import {
 } from "@/features/recent-visits";
 import type { ManualNavState } from "@/shared/types/manual-nav";
 
-import { normalizeHiddenRecentVisitIds } from "./manualNavStateShared";
+import {
+  DEFAULT_MANUAL_NAV_UI,
+  normalizeHiddenRecentVisitIds,
+} from "./manualNavStateShared";
 
 type UseManualNavSettingsOptions = {
   state: ManualNavState;
@@ -18,14 +21,16 @@ export function useManualNavSettings({
   state,
   setState,
 }: UseManualNavSettingsOptions) {
-  const categoryLayout = state.ui?.categoryLayout ?? "top";
-  const columnsPerRow = state.ui?.columnsPerRow ?? 5;
-  const showRecentVisits = state.ui?.showRecentVisits ?? true;
+  const categoryLayout = state.ui?.categoryLayout ?? DEFAULT_MANUAL_NAV_UI.categoryLayout;
+  const columnsPerRow = state.ui?.columnsPerRow ?? DEFAULT_MANUAL_NAV_UI.columnsPerRow;
+  const showRecentVisits = state.ui?.showRecentVisits ?? DEFAULT_MANUAL_NAV_UI.showRecentVisits;
   const recentVisitsRows = normalizeRecentVisitsRows(
-    state.ui?.recentVisitsRows,
+    state.ui?.recentVisitsRows ?? DEFAULT_MANUAL_NAV_UI.recentVisitsRows,
     state.ui?.recentVisitsCount,
   );
-  const recentVisitsCardSize = normalizeRecentVisitsCardSize(state.ui?.recentVisitsCardSize);
+  const recentVisitsCardSize = normalizeRecentVisitsCardSize(
+    state.ui?.recentVisitsCardSize ?? DEFAULT_MANUAL_NAV_UI.recentVisitsCardSize,
+  );
   const hiddenRecentVisitIds = normalizeHiddenRecentVisitIds(state.ui?.hiddenRecentVisitIds);
 
   const handleCategoryLayoutChange = useCallback((layout: "top" | "left" | "all") => {

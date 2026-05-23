@@ -1,6 +1,5 @@
 import {
-  RECENT_VISITS_CARD_SIZE_DEFAULT,
-  RECENT_VISITS_ROWS_DEFAULT,
+  RECENT_VISITS_CARD_SIZE_MIN,
   normalizeRecentVisitsRows,
 } from "@/features/recent-visits";
 import type { ManualNavState } from "@/shared/types/manual-nav";
@@ -15,6 +14,15 @@ export function normalizeHiddenRecentVisitIds(value: string[] | undefined): stri
   );
 }
 
+export const DEFAULT_MANUAL_NAV_UI = {
+  categoryLayout: "left",
+  showRecentVisits: true,
+  recentVisitsRows: 1,
+  recentVisitsCardSize: RECENT_VISITS_CARD_SIZE_MIN,
+  hiddenRecentVisitIds: [],
+  columnsPerRow: 6,
+} satisfies NonNullable<ManualNavState["ui"]>;
+
 export const DEFAULT_MANUAL_NAV_STATE: ManualNavState = {
   categories: [
     {
@@ -22,17 +30,13 @@ export const DEFAULT_MANUAL_NAV_STATE: ManualNavState = {
       name: "常用",
       links: [
         { id: "github", title: "GitHub", url: "https://github.com" },
-        { id: "mdn", title: "MDN", url: "https://developer.mozilla.org" },
+        { id: "weibo", title: "微博", url: "https://weibo.com" },
+        { id: "xiaohongshu", title: "小红书", url: "https://www.xiaohongshu.com" },
+        { id: "bilibili", title: "哔哩哔哩", url: "https://www.bilibili.com" },
       ],
     },
   ],
-  ui: {
-    categoryLayout: "top",
-    showRecentVisits: true,
-    recentVisitsRows: RECENT_VISITS_ROWS_DEFAULT,
-    recentVisitsCardSize: RECENT_VISITS_CARD_SIZE_DEFAULT,
-    hiddenRecentVisitIds: [],
-  },
+  ui: DEFAULT_MANUAL_NAV_UI,
 };
 
 export function mergeLoadedManualNavState(saved: ManualNavState): ManualNavState {

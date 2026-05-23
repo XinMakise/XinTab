@@ -2,9 +2,7 @@ import { act, renderHook, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useManualNavState } from "@/features/manual-nav";
-import {
-  RECENT_VISITS_CARD_SIZE_MIN,
-} from "@/features/recent-visits";
+import { RECENT_VISITS_CARD_SIZE_MIN } from "@/features/recent-visits";
 import { storage } from "@/shared/browser/storage";
 import type { ManualNavState } from "@/shared/types/manual-nav";
 
@@ -73,6 +71,23 @@ describe("useManualNavState", () => {
     await waitFor(() => {
       expect(result.current.loading).toBe(false);
     });
+
+    expect(result.current.state.categories).toEqual([
+      {
+        id: "quick",
+        name: "常用",
+        links: [
+          { id: "github", title: "GitHub", url: "https://github.com" },
+          { id: "weibo", title: "微博", url: "https://weibo.com" },
+          { id: "xiaohongshu", title: "小红书", url: "https://www.xiaohongshu.com" },
+          { id: "bilibili", title: "哔哩哔哩", url: "https://www.bilibili.com" },
+        ],
+      },
+    ]);
+    expect(result.current.categoryLayout).toBe("left");
+    expect(result.current.columnsPerRow).toBe(6);
+    expect(result.current.recentVisitsRows).toBe(1);
+    expect(result.current.recentVisitsCardSize).toBe(RECENT_VISITS_CARD_SIZE_MIN);
 
     mockedStorage.set.mockClear();
 

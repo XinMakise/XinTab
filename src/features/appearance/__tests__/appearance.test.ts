@@ -3,6 +3,27 @@ import { describe, expect, it } from "vitest";
 import { applyAppearance, defaultAppearance } from "@/features/appearance";
 
 describe("appearance", () => {
+  it("uses the bundled default appearance settings", () => {
+    expect(defaultAppearance()).toMatchObject({
+      mode: "preset",
+      themeMode: "dark",
+      presetGroupId: "rose_pine",
+      radiusRem: 1.25,
+      fontScale: 1,
+      font: "crimson_pro",
+      cardOpacity: 0.5,
+      categoryButtonOpacity: 1,
+      cardMaterial: "transparent",
+      categoryContainerEnabled: true,
+      leftCategoryWidthPx: 120,
+      topNavOpacity: 0.1,
+      topNavMaterial: "transparent",
+      searchBarOpacity: 0.3,
+      searchBarMaterial: "transparent",
+      backgroundImageKey: null,
+    });
+  });
+
   it("clamps and applies the category width css variable", () => {
     applyAppearance({
       ...defaultAppearance(),
